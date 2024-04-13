@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!--Euphorium is a ThingDef, and we are telling-->
+  <!--the game that we want to make it a Drug-->
+  <ThingDef ParentName="MakeableDrugBase">
+    <!--What XML calls our item-->
+    <defName>Euphorium</defName>
+    <!--What Rimworld calls our item-->
+    <label>Euphorium</label>
+    <!--Description of our item when you click the "i" button-->
+    <description>a potent drug that will heavily boost stats at the risk of Ambrosia addiction.</description>
+    <!--This stuff loads the textures for our drug-->
+    <graphicData>
+      <texPath>Things/Item/Drug/Euphorium</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <!--How much work does it take to make this item-->
+      <WorkToMake>500</WorkToMake>
+      <!--How much is this item worth to traders?-->
+      <MarketValue>1000</MarketValue>
+      <!--How much does the item weigh, in KG I think?-->
+      <Mass>0.01</Mass>
+    </statBases>
+    <!--This is the recipe for our item-->
+    <!--I.e what it takes to craft it-->
+    <costList>
+      <Ambrosia>2</Ambrosia>
+      <Neutroamine>2</Neutroamine>
+      <InsectJelly>5</InsectJelly>
+    </costList>
+    <!--All the values we need for an ingestible drug-->
+    <ingestible>
+      <foodType>Processed</foodType>
+      <joyKind>Chemical</joyKind>
+      <joy>0.50</joy>
+      <drugCategory>Hard</drugCategory>
+      <!--How fast it is consumed-->
+      <baseIngestTicks>150</baseIngestTicks>
+      <chairSearchRadius>4</chairSearchRadius>
+      <!--Can someone feed you this drug-->
+      <nurseable>true</nurseable>
+      <!--Put outcomedoers here later-->
+    </ingestible>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <chemical>Ambrosia</chemical>
+        <addictiveness>0.030</addictiveness>
+        <minToleranceToAddict>0.15</minToleranceToAddict>
+        <listOrder>40</listOrder>
+      </li>
+    </comps>
+  </ThingDef>
+</Defs>
